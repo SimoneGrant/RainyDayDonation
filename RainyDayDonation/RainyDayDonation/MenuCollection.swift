@@ -23,9 +23,10 @@ class MenuCollection: NSObject, UICollectionViewDataSource, UICollectionViewDele
     
     let cellId = "cellIdentifier"
     let cellHeight = 50
+    var menuController: MapViewController?
     
     let menu: [Menu] = {
-        return  [Menu(name: "Map", imageName: "umbrella-2"), Menu(name: "Donor's Choose", imageName: "umbrella-2"), Menu(name: "Account Details", imageName: "umbrella-2"), Menu(name: "Settings", imageName: "umbrella-2")]
+        return  [Menu(name: "Map", imageName: "Pittsburgh Map-48"), Menu(name: "Donor's Choose", imageName: "External Link-48"), Menu(name: "Account Details", imageName: "User-48"), Menu(name: "Cancel", imageName: "Delete-48")]
     }()
     
     //MARK: - UIActions
@@ -76,27 +77,11 @@ class MenuCollection: NSObject, UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MenuCollectionCell
         
-        //        cell.contentView.addSubview(nameLabel)
-        //        cell.contentView.addSubview(iconImageView)
+        let menuItem = menu[indexPath.item]
+        cell.menu = menuItem
         
-        //        constraints
-        //        nameLabel.snp.makeConstraints { (make) -> Void in
-        //            make.bottom.right.equalTo(cell)
-        //            make.left.equalTo(iconImageView.snp.right).offset(8)
-        //            make.centerY.equalTo(cell)
-        //        }
-        //
-        //        iconImageView.snp.makeConstraints { (make) -> Void in
-        //            make.left.equalTo(cell).offset(8)
-        ////            make.top.equalTo(cell).inset(20)
-        //            make.centerY.equalTo(cell)
-        //        }
-        
-        let setting = menu[indexPath.item]
-        cell.menu = setting
         return cell
     }
-    
     
     //minimize spacing between cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -106,6 +91,20 @@ class MenuCollection: NSObject, UICollectionViewDataSource, UICollectionViewDele
     //expand collection view cells horizontally across width of screen
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.collectionView.frame.width, height: CGFloat(cellHeight))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            
+            self.blackScreen.alpha = 0
+            
+            if let window = UIApplication.shared.keyWindow {
+                self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+            }
+        }) { (completed: Bool) in
+            let menuItem = self.menu[indexPath.item]
+            self.menuController?.navigateToController(menuItem)
+        }
     }
     
     override init() {
@@ -131,18 +130,5 @@ class MenuCollection: NSObject, UICollectionViewDataSource, UICollectionViewDele
         cv.backgroundColor = UIColor.white
         return cv
     }()
-    
-    //    let nameLabel: UILabel = {
-    //        let label = UILabel()
-    //        label.text = "Settings"
-    //        return label
-    //    }()
-    //
-    //    let iconImageView: UIImageView = {
-    //        let imageView = UIImageView()
-    //        imageView.image = UIImage(named: "umbrella-2")
-    //        imageView.contentMode = .scaleAspectFill
-    //        return imageView
-    //    }()
-    
 }
+

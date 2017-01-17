@@ -10,40 +10,47 @@ import UIKit
 import SnapKit
 
 class MenuCollectionCell: UICollectionViewCell {
+    
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? UIColor.darkGray : UIColor.white
+            nameLabel.textColor = isHighlighted ? UIColor.white : UIColor.gray
+            if isHighlighted {
+                iconImageView.tintColor = UIColor.white
+            }
+            print(isHighlighted)
+        }
+    }
+    
     var menu: Menu? {
         didSet {
             nameLabel.text = menu?.name
-            if let imageName = menu?.name {
+            if let imageName = menu?.imageName {
                 iconImageView.image = UIImage(named: imageName)
+                //                ?.withRenderingMode(.alwaysTemplate) //to change tint color to your choice
             }
         }
     }
     
     //MARK: Views
-    var nameLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Settings"
-        label.font = UIFont.systemFont(ofSize: 13)
-        return label
-    }()
     
-    var iconImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "umbrella-2")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
-    }()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(iconImageView)
-        setupViews()
-    }
+    var nameLabel: UILabel!
+    var iconImageView: UIImageView!
     
     override init(frame: CGRect) {
+        iconImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: frame.size.height/3))
+        nameLabel = UILabel(frame:  CGRect(x: 15, y: iconImageView.frame.size.height, width: frame.size.width, height: frame.size.height/3))
         super.init(frame: frame)
+        nameLabel.font = UIFont(name: "San Francisco", size: 20)
+        nameLabel.textColor = UIColor.gray
+        nameLabel.text = "Settings"
+        contentView.addSubview(nameLabel)
+        
+        iconImageView.contentMode = UIViewContentMode.scaleAspectFit
+        iconImageView.contentMode = .scaleAspectFit
+        contentView.addSubview(iconImageView)
+        
+        setupViews()
         
     }
     
@@ -53,7 +60,6 @@ class MenuCollectionCell: UICollectionViewCell {
     
     func setupViews() {
         nameLabel.snp.makeConstraints { (make) -> Void in
-            make.bottom.right.equalTo(self)
             make.left.equalTo(iconImageView.snp.right).offset(8)
             make.centerY.equalTo(self)
         }

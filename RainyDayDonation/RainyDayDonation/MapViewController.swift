@@ -44,7 +44,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
         //views
         setupViewHierarchy()
         //buttons
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showMenu))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named:"menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(showMenu))
         loadData()
     }
     
@@ -164,7 +164,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
         return annotationImage
     }
     
-    //HERE
     func mapView(_ mapView: MGLMapView, annotation: MGLAnnotation, calloutAccessoryControlTapped control: UIControl) {
         let vc = ProjectPageViewController()
         if let annotationClicked = annotation as? LocationMapAnnotation {
@@ -174,6 +173,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    //MARK: - Navigation
+    
+    func navigateToController(_ menu: Menu) {
+        if menu.name == "Map" {
+            navigationController?.pushViewController(MapViewController(), animated: true)
+        } else if menu.name == "Donor's Choose" {
+            navigationController?.pushViewController(ProjectPageViewController(), animated: true)
+        } else if menu.name == "Account Details" {
+            navigationController?.pushViewController(ProfileViewController(), animated: true)
+        }
+    }
     
     //MARK: - Views
     
@@ -182,7 +192,4 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MGLMapView
         return mapView
     }()
     
-    
 }
-
-
