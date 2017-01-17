@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D1F047794BCC429FB8EEF93 /* Pods_RainyDayDonation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F82BC08F821FA802672A0C99 /* Pods_RainyDayDonation.framework */; };
 		7DA07B901E2D97F8006BC583 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA07B8F1E2D97F8006BC583 /* AppDelegate.swift */; };
 		7DA07B921E2D97F8006BC583 /* ProjectPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA07B911E2D97F8006BC583 /* ProjectPageViewController.swift */; };
 		7DA07B951E2D97F8006BC583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DA07B931E2D97F8006BC583 /* Main.storyboard */; };
@@ -21,9 +22,11 @@
 		7DA07BAF1E2D9958006BC583 /* LocationMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA07BAE1E2D9958006BC583 /* LocationMapAnnotation.swift */; };
 		7DA07BB11E2D996F006BC583 /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA07BB01E2D996F006BC583 /* Classroom.swift */; };
 		7DA07BB31E2D99D3006BC583 /* Project+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA07BB21E2D99D3006BC583 /* Project+Addition.swift */; };
+		7DA07BB51E2D9D12006BC583 /* APIRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA07BB41E2D9D12006BC583 /* APIRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F5DAAF44D76D32F3F36068C /* Pods-RainyDayDonation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyDayDonation.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainyDayDonation/Pods-RainyDayDonation.release.xcconfig"; sourceTree = "<group>"; };
 		7DA07B8C1E2D97F8006BC583 /* RainyDayDonation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainyDayDonation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DA07B8F1E2D97F8006BC583 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DA07B911E2D97F8006BC583 /* ProjectPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectPageViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		7DA07BAE1E2D9958006BC583 /* LocationMapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationMapAnnotation.swift; sourceTree = "<group>"; };
 		7DA07BB01E2D996F006BC583 /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
 		7DA07BB21E2D99D3006BC583 /* Project+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Project+Addition.swift"; sourceTree = "<group>"; };
+		7DA07BB41E2D9D12006BC583 /* APIRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestManager.swift; sourceTree = "<group>"; };
+		87A2E71096D7D0EF8A5D645B /* Pods-RainyDayDonation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainyDayDonation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RainyDayDonation/Pods-RainyDayDonation.debug.xcconfig"; sourceTree = "<group>"; };
+		F82BC08F821FA802672A0C99 /* Pods_RainyDayDonation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainyDayDonation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D1F047794BCC429FB8EEF93 /* Pods_RainyDayDonation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +65,8 @@
 			children = (
 				7DA07B8E1E2D97F8006BC583 /* RainyDayDonation */,
 				7DA07B8D1E2D97F8006BC583 /* Products */,
+				852597DA2B63B1C88CBAFA80 /* Pods */,
+				9D896ECC05FA1E4A5D02AD99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				7DA07B8F1E2D97F8006BC583 /* AppDelegate.swift */,
+				7DA07BB41E2D9D12006BC583 /* APIRequestManager.swift */,
 				7DA07B911E2D97F8006BC583 /* ProjectPageViewController.swift */,
 				7DA07BA41E2D98AA006BC583 /* ProfileViewController.swift */,
 				7DA07BA61E2D98D6006BC583 /* ProfileTableViewCell.swift */,
@@ -91,6 +101,23 @@
 			path = RainyDayDonation;
 			sourceTree = "<group>";
 		};
+		852597DA2B63B1C88CBAFA80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87A2E71096D7D0EF8A5D645B /* Pods-RainyDayDonation.debug.xcconfig */,
+				3F5DAAF44D76D32F3F36068C /* Pods-RainyDayDonation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9D896ECC05FA1E4A5D02AD99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F82BC08F821FA802672A0C99 /* Pods_RainyDayDonation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DA07BA11E2D97F8006BC583 /* Build configuration list for PBXNativeTarget "RainyDayDonation" */;
 			buildPhases = (
+				9891210EA8B3B6641A5F68A0 /* [CP] Check Pods Manifest.lock */,
 				7DA07B881E2D97F8006BC583 /* Sources */,
 				7DA07B891E2D97F8006BC583 /* Frameworks */,
 				7DA07B8A1E2D97F8006BC583 /* Resources */,
+				F1470278C460C0A964FBEC18 /* [CP] Embed Pods Frameworks */,
+				9F6778A1AEBD2C86000EA760 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -158,11 +188,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9891210EA8B3B6641A5F68A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9F6778A1AEBD2C86000EA760 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RainyDayDonation/Pods-RainyDayDonation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1470278C460C0A964FBEC18 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RainyDayDonation/Pods-RainyDayDonation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7DA07B881E2D97F8006BC583 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA07BB51E2D9D12006BC583 /* APIRequestManager.swift in Sources */,
 				7DA07BAB1E2D9924006BC583 /* MenuCollection.swift in Sources */,
 				7DA07B921E2D97F8006BC583 /* ProjectPageViewController.swift in Sources */,
 				7DA07BA91E2D98FF006BC583 /* MapViewController.swift in Sources */,
@@ -294,6 +373,7 @@
 		};
 		7DA07BA21E2D97F8006BC583 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87A2E71096D7D0EF8A5D645B /* Pods-RainyDayDonation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RainyDayDonation/Info.plist;
@@ -306,6 +386,7 @@
 		};
 		7DA07BA31E2D97F8006BC583 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F5DAAF44D76D32F3F36068C /* Pods-RainyDayDonation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RainyDayDonation/Info.plist;
@@ -335,6 +416,7 @@
 				7DA07BA31E2D97F8006BC583 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

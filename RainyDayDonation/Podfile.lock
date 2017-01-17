@@ -1,0 +1,18 @@
+PODS:
+  - Mapbox-iOS-SDK (3.3.7)
+  - SnapKit (3.0.2)
+  - TwicketSegmentedControl (0.1.1)
+
+DEPENDENCIES:
+  - Mapbox-iOS-SDK (~> 3.3)
+  - SnapKit (>= 3.0.0)
+  - TwicketSegmentedControl (~> 0.1)
+
+SPEC CHECKSUMS:
+  Mapbox-iOS-SDK: 142301fa63a6719cbd2eacc0f9e8bf36c65930d9
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  TwicketSegmentedControl: bbb2d155792dbfcee7fea995a614d0c0a3de4a16
+
+PODFILE CHECKSUM: 5558b542044e0f47dd04de7d8029f97459fe1c58
+
+COCOAPODS: 1.1.1
