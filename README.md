@@ -4,5 +4,4 @@ Rainy Day Donation is a map-based search of local classrooms in need of donation
 
 <img src="https://github.com/SimoneGrant/RainyDayDonation/blob/master/rainydemo.gif" width="320" />
 
-Contributors to this project include:
-Simone Grant, Edward Anchundia, Margaret Ikeda and Miti Shah 
+To make donating quick and easy, users are greeted with a campaign map. The map contains a list of local classroom in need of donations. Users can click on the annotions to learn more about each campaign and donate to their favorite classrooms. 
